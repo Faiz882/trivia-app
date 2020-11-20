@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.QuestionActivity">
+    <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/progress"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:id="@+id/ll_question_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/parot_color"
+            android:layout_margin="20dp"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/tv_question_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Question: 1"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_point"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Points: 0"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:gravity="end"
+                android:layout_marginEnd="10dp"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/tv_question_timer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_question_points"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Time left: 05"
+            android:textColor="@color/parot_color"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_question"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question_timer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/radio"
+            android:layout_marginTop="20dp"
+            android:text="Question: ,MASASM,ASM,SAMNMNSAMNSAD,NMSDANSMDA"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question"
+            app:layout_constraintBottom_toTopOf="@+id/btn_next"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="20dp"
+            >
+
+            <RadioButton
+                android:id="@+id/option_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="question 1"
+                android:layout_marginVertical="10dp"
+
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/option_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="question 2" />
+            <RadioButton
+                android:id="@+id/option_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+
+                android:text="question 3" />
+            <RadioButton
+                android:id="@+id/option_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+
+                android:text="question 4" />
+
+        </RadioGroup>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/btn_next"
+            android:text="@string/next"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="40dp"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/button_background"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
