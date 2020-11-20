@@ -34,6 +34,7 @@ class QuestionActivity : AppCompatActivity() , View.OnClickListener{
     private lateinit var apiViewModel: ApiViewModel
     private var questionIndex = 1
     private var amount = 10
+    private var lifeCount = 0
     private lateinit var mQuestionList:ArrayList<Result>
     private val  QUICK_MODE = "quick"
     private val  SIMPLE_MODE = "simple"
@@ -108,7 +109,8 @@ class QuestionActivity : AppCompatActivity() , View.OnClickListener{
                         option_3.visibility = View.GONE
                         option_4.visibility = View.GONE
                     }
-                    countDownTimer()
+                    if(mode==QUICK_MODE)
+                          countDownTimer()
 
                 } else {
                     constant.showToast("Sorry! No question found")
@@ -278,8 +280,15 @@ class QuestionActivity : AppCompatActivity() , View.OnClickListener{
             }
 
             override fun onFinish() {
-                tv_question_timer.text = "seconds remaining: 5"
-                btn_next.performClick()
+                lifeCount += 1
+                if(lifeCount>=3){
+                    constant.showToast("You have lost all lives and your final score was $totalPoint")
+                    finish()
+                }
+                else {
+                    tv_question_timer.text = "seconds remaining: 5"
+                    btn_next.performClick()
+                }
 
             }
         }.start()

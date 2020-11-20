@@ -151,7 +151,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             R.style.CustomAlertDialog
         )
         alertDialogBuilder.setTitle("Alert!")
-        alertDialogBuilder.setMessage("Remember you have only 5 seconds to answer each question")
+        alertDialogBuilder.setMessage("Remember you have only 5 seconds to answer each question and you have only 3 life")
         alertDialogBuilder.setPositiveButton("Start"){ dialogInterface, _ ->
             val intent:Intent = Intent(context,QuestionActivity::class.java)
             intent.putExtra("mode","quick")
